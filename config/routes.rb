@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'employee_card/overview'
+  get 'employee_card/musco'
+  get 'employee_card/fatigue'
+  get 'employee_card/hydration'
+  get 'employee_card/mental'
+  get 'employee_card/aod'
 
-  # Serve websocket cable requests in-process
-  # mount ActionCable.server => '/cable'
+  root to: 'employee_card#overview'
 end
