@@ -9,13 +9,13 @@
 .abstract-row {
   @extend .row;
   padding: 12px;
-  font-size: 2em;
+  font-size: 120%;
   border-bottom: 1px solid #ddd;
 }
 
 .info-row {
   @extend .abstract-row;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .title-row {
@@ -53,4 +53,22 @@ label {
 .tell-someone-container {
   display: flex;
   justify-content: space-around;
+}
+
+.aod-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex-grow: 1;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.aod-avatar {
+  height: 200px;
+}
+
+.aod-container {
+  display: flex;
+  justify-content: space-between;
 }
