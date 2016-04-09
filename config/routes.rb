@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get 'employee_card/mental'
   get 'employee_card/aod'
 
+  post 'employee_card/mental', to: 'employee_card#save_wellness'
+
   root to: 'employee_card#overview'
 end
