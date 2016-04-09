@@ -4,6 +4,7 @@
 
 .pane {
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .abstract-row {
@@ -33,10 +34,16 @@
   justify-content: space-between;
 }
 
-.smiley {
+.jumbotron {
+  padding-top: 8px !important;
+  padding-bottom: 20px !important;
 
+  .container {
+    h2 {
+      margin-bottom: 15px;
+    }
+  }
 }
-
 label {
   &.left-label {
     float: left;
