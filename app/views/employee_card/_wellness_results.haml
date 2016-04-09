@@ -1,10 +1,23 @@
-%h2 Results
+%h2 Results<br />
 
 %ul
-  Your results show you're experiencing:
+  %h4 Your results show you're experiencing:
   %li
-    #{@depression} depression
+    #{@depression} features of depression
   %li
-    #{@anxiety} anxiety
+    #{@anxiety} features of anxiety
   %li
-    #{@stress} stress
+    #{@stress} features of stress
+.row
+  - if [@depression, @anxiety, @stress].all? {|s| s == 'normal'}
+    Congratulations, you look like you're doing well!
+  - else
+    .col-md-6.col-md-offset-3
+      %h4 Do you want to discuss this with somebody?<br />
+      .tell-someone-container
+        %button.btn.btn-primary Yes
+        %button.btn.btn-warning No
+    .col-md-2
+
+    .col-md-2
+    .col-md-2
