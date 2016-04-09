@@ -22,7 +22,7 @@
             <li class="<%= active_page?('musco') ? 'active' : '' %>"><%= link_to('Fitness', employee_card_musco_path) %></li>
             <li class="<%= active_page?('fatigue') ? 'active' : '' %>"><%= link_to('Fatigue', employee_card_fatigue_path) %></li>
             <li class="<%= active_page?('hydration') ? 'active' : '' %>"><%= link_to('Hydration', employee_card_hydration_path) %></li>
-            <li class="<%= active_page?('mental') ? 'active' : '' %>"><%= link_to('Wellness', employee_card_mental_path) %></li>
+            <li class="<%= active_page?('mental') ? 'active' : '' %>"><%= link_to('Wellness <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"</span>'.html_safe, employee_card_mental_path) %></li>
             <li class="<%= active_page?('aod') ? 'active' : '' %>"><%= link_to('AOD', employee_card_aod_path) %></li>
             <li class="<%= active_page?('login') ? 'active' : '' %>"><a href="#">Login</a></li>
           </ul>
