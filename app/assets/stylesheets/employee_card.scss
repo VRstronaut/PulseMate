@@ -36,3 +36,13 @@
 .smiley {
 
 }
+
+label {
+  &.left-label {
+    float: left;
+  }
+
+  &.right-label {
+    float: right;
+  }
+}

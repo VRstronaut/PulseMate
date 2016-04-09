@@ -1,16 +1,55 @@
-.jumbotron
-  .smiley-container
-    .smiley
-      Happy
-    .smiley
-      Sad
-    .smiley
-      Angry
-    .smiley
-      Worried
-    .smiley
-      Disgusted
-    .smiley
-      Tired
-    .smiley
-      Confused
+%form.jumbotron
+  .container
+    %h2
+      How are you feeling today? (0-10)
+    .info-row
+      .col-md-3
+        Happy
+      .col-md-9
+        %input{type: 'range', name: "points", min: "0", max: "10", onChange: 'updateSliderValue("happy", this.value);'}
+        %label.left-label{id: "happy"}
+    .info-row
+      .col-md-3
+        Sad
+      .col-md-9
+        %input{type: 'range', name: "points", min: "0", max: "10", onChange: 'updateSliderValue("sad", this.value);'}
+        %label.left-label{id: "sad"}
+    .info-row
+      .col-md-3
+        Angry
+      .col-md-9
+        %input{type: 'range', name: "points", min: "0", max: "10", onChange: 'updateSliderValue("angry", this.value);'}
+        %label.left-label{id: "angry"}
+    .info-row
+      .col-md-3
+        Worried
+      .col-md-9
+        %input{type: 'range', name: "points", min: "0", max: "10", onChange: 'updateSliderValue("worried", this.value);'}
+        %label.left-label{id: "worried"}
+    .info-row
+      .col-md-3
+        Disgusted
+      .col-md-9
+        %input{type: 'range', name: "points", min: "0", max: "10", onChange: 'updateSliderValue("disgusted", this.value);'}
+        %label.left-label{id: "disgusted"}
+    .info-row
+      .col-md-3
+        Tired
+      .col-md-9
+        %input{type: 'range', name: "points", min: "0", max: "10", onChange: 'updateSliderValue("tired", this.value);'}
+        %label.left-label{id: "tired"}
+    .info-row
+      .col-md-3
+        Confused
+      .col-md-9
+        %input{type: 'range', name: "points", min: "0", max: "10", onChange: 'updateSliderValue("confused", this.value);'}
+        %label.left-label{id: "confused"}
+    .info-row
+      %button.btn.btn-success{type: 'submit'}
+        Confirm
+
+:javascript
+  function updateSliderValue(id, value)
+  {
+    document.getElementById(id).innerHTML=value + '/10';
+  }
