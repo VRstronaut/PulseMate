@@ -24,7 +24,7 @@
   //.modal-dialog
 //.modal
 
-.alert.alert-danger{:role => "alert"}
+.alert.alert-danger{:role => "alert", id: 'mental-alert'}
   %span.glyphicon.glyphicon-exclamation-sign{"aria-hidden" => "true"}
   %span Your vital statistics suggest something might be different for you recently. Please fill in the questionnaire below
 
@@ -48,6 +48,6 @@
             - ['Never', 'Sometimes', 'Often', 'Almost Always'].each_with_index do |a, subidx|
               %td
                 %input{name: "#{i}", value: subidx, type: 'radio', checked: selected == subidx ? 'checked' : nil}
-    .info-row
-      %button.btn.btn-success{type: 'submit'}
-        Tell me how I feel baby!
+    %hr
+    %button.btn.btn-primary{type: 'submit'}
+      Tell me how I feel baby!

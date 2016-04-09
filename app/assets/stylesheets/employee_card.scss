@@ -79,3 +79,59 @@ label {
   display: flex;
   justify-content: space-between;
 }
+
+.hydration-container {
+  // padding-bottom: 20px;
+}
+
+.urine-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.urine-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  /* width and height can be anything, as long as they're equal */
+  background-color: black;
+
+  cursor: pointer;
+}
+
+.urine-clear {
+  background-color: #FFFFFF;
+}
+
+.urine-straw {
+  background-color:  #F7F6C9;
+}
+
+.urine-light-yellow {
+  background-color: #F1F19C;
+}
+
+.urine-yellow {
+  background-color: #F0E148;
+}
+
+.urine-dark-yellow {
+  background-color: #E8DB5B;
+}
+
+.urine-amber {
+  background-color: #D9B54E;
+}
+
+.urine-brown {
+  background-color: #88904A;
+}

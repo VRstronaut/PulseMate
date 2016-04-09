@@ -1,8 +1,7 @@
-
 %h2 Results<br />
 
 %ul
-  %h4 Your results show you're experiencing:
+  %h4 You seem to be experiencing:
   - @metrics.each do |metric|
     %li
       #{metric.intensity} features of #{metric.type}
@@ -18,7 +17,7 @@
           Do you want to discuss this with somebody?
       %br
       .tell-someone-container
-        %button.btn.btn-primary{ data: { toggle: "modal", target: "#contact-modal" } } Yes
+        %button.btn.btn-success{ data: { toggle: "modal", target: "#contact-modal" } } Yes
         %button.btn.btn-warning{disabled: @metrics.any?(&:extreme?)} No
     .col-md-2
 

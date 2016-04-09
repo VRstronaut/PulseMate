@@ -1,23 +1,61 @@
-.info-row
-  .col-md-3
-    Your location
-  .col-md-9
-    MAPPY MAP
-.info-row
-  .col-md-3
-    Weather for day
-  .col-md-9
-    TEMPY TEMPERATURE
-.info-row
-  .col-md-3
-    Activity Level
-  .col-md-9
-    SELECTY SELECT
 .jumbotron
   .container
-    %h2 You are at HIGH/MED/LOW risk of dehydration.
-.jumbotron
-  .container
+    %h2 Notes for today
+    %p Based on your location and your exercise level you're at <b>moderate risk of dehydration</b>.
+
+.hydration-container.container
+  .info-row
+    .col-md-3
+      Your location
+    .col-md-9
+      %img.img-circle{src: image_path('location'), width: '200px'}
+  .info-row
+    .col-md-3
+      Weather for day
+    .col-md-9
+      <i class="fa fa-sun-o"></i> 35° C
+  .info-row
+    .col-md-3
+      Activity Level
+    .col-md-9
+      Low
+  .info-row
     %h2 Self Assessment
-    %p What colour is your urine?
-    %p -------CLICKY CLICK---------
+    %p What colour was your urine the last time you went?
+    #message-container
+    .urine-container
+      .circle.urine-clear{ onClick: 'handleUrineClick(this)', data: { colour: 0 }}
+      .circle.urine-straw{ onClick: 'handleUrineClick(this)', data: { colour: 1 }}
+      .circle.urine-light-yellow{ onClick: 'handleUrineClick(this)', data: { colour: 2 }}
+      .circle.urine-yellow{ onClick: 'handleUrineClick(this)', data: { colour: 3 }}
+      .circle.urine-dark-yellow{ onClick: 'handleUrineClick(this)', data: { colour: 4 }}
+      .circle.urine-amber{ onClick: 'handleUrineClick(this)', data: { colour: 5 }}
+      .circle.urine-brown{ onClick: 'handleUrineClick(this)', data: { colour: 6 }}
+
+:javascript
+  function handleUrineClick(object) {
+    var messages = [
+      "You're drinking a lot of water. You may be over-hydrated",
+      "You're normal, healthy and well hydrated",
+      "You're normal but drink some water soon",
+      "You are mildly dehydrated. Drink some water now.",
+      "You are mildly dehydrated. Drink some water now.",
+      "You are dehydrated. Your body isn't getting enough water. You need to drink water now.",
+      "You could have liver disease or sever dehydration. Re-hydrate immediately and see a doctor if this persists",
+    ];
+
+    var colour = $(object).data('colour');
+    var message = messages[colour];
+
+    if (colour < 3) {
+      var bannerClass = 'alert-success';
+    } else if (colour < 5) {
+      var bannerClass = 'alert-warning';
+    } else {
+      var bannerClass = 'alert-danger';
+    }
+
+    $('#message-container').html(
+      '<div class="alert ' + bannerClass + '" role="alert">' + message + '</div>'
+    );
+  }
