@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.pane {
+  margin-top: 40px;
+}
+
 .abstract-row {
   @extend .row;
   padding: 12px;
