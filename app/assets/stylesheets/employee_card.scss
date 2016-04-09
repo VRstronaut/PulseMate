@@ -1,3 +1,25 @@
 // Place all the styles related to the employee_card controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.abstract-row {
+  @extend .row;
+  padding: 12px;
+  font-size: 2em;
+  border-bottom: 1px solid #ddd;
+}
+
+.info-row {
+  @extend .abstract-row;
+  font-weight: 100;
+}
+
+.title-row {
+  @extend .abstract-row;
+
+}
+
+.cell {
+  @extend .col-md-3;
+  text-align: center;
+}

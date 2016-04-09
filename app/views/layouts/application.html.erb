@@ -19,16 +19,18 @@
         <nav>
           <ul class="nav nav-justified">
             <li class="<%= active_page?('overview') ? 'active' : '' %>"><%= link_to('Overview', employee_card_overview_path) %></li>
-            <li class="<%= active_page?('musco') ? 'active' : '' %>"><%= link_to('Musculoskeletal', employee_card_musco_path) %></li>
+            <li class="<%= active_page?('musco') ? 'active' : '' %>"><%= link_to('Fitness', employee_card_musco_path) %></li>
             <li class="<%= active_page?('fatigue') ? 'active' : '' %>"><%= link_to('Fatigue', employee_card_fatigue_path) %></li>
             <li class="<%= active_page?('hydration') ? 'active' : '' %>"><%= link_to('Hydration', employee_card_hydration_path) %></li>
-            <li class="<%= active_page?('mental') ? 'active' : '' %>"><%= link_to('Mental Health', employee_card_mental_path) %></li>
+            <li class="<%= active_page?('mental') ? 'active' : '' %>"><%= link_to('Wellness', employee_card_mental_path) %></li>
             <li class="<%= active_page?('aod') ? 'active' : '' %>"><%= link_to('AOD', employee_card_aod_path) %></li>
             <li class="<%= active_page?('login') ? 'active' : '' %>"><a href="#">Login</a></li>
           </ul>
         </nav>
       </div>
-      <%= yield %>
+      <div class="pane col-md-10 col-md-offset-1">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
