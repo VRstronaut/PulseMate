@@ -1,3 +1,29 @@
+.modal.fade{:role => "dialog", :tabindex => "-1", id: 'contact-modal'}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4.modal-title Talk to somebody
+      %form.modal-body
+        .form-group
+          %label Name
+          %input{type: 'text', class: 'form-control'}
+        .form-group
+          %label Email
+          %input{type: 'text', class: 'form-control'}
+        .form-group
+          %label Role
+          %input{type: 'text', class: 'form-control'}
+        .form-group
+          %label Phone
+          %input{type: 'text', class: 'form-control'}
+      .modal-footer
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button" } Send
+    / /.modal-content
+  / /.modal-dialog
+/ /.modal
+
 .alert.alert-danger{:role => "alert"}
   %span.glyphicon.glyphicon-exclamation-sign{"aria-hidden" => "true"}
   %span Your vital statistics suggest something might be different for you recently. Please fill in the questionnaire below
