@@ -2,21 +2,23 @@
 
 %ul
   %h4 Your results show you're experiencing:
-  %li
-    #{@depression} features of depression
-  %li
-    #{@anxiety} features of anxiety
-  %li
-    #{@stress} features of stress
+  - @metrics.each do |metric|
+    %li
+      #{metric.intensity} features of #{metric.type}
 .row
-  - if [@depression, @anxiety, @stress].all? {|s| s == 'normal'}
+  - if @metrics.all?(&:normal?)
     Congratulations, you look like you're doing well!
   - else
-    .col-md-6.col-md-offset-3
-      %h4 Do you want to discuss this with somebody?<br />
+    .col-md-10.col-md-offset-1
+      %h4
+        - if @metrics.any?(&:extreme?)
+          These results tell us that it looks like you're struggling. We have a duty of care to tell someone. Who do you want us to tell? (if you don't select anybody it will automatically be sent to your employee assistance provider)
+        - else
+          Do you want to discuss this with somebody?
+      %br
       .tell-someone-container
         %button.btn.btn-primary Yes
-        %button.btn.btn-warning No
+        %button.btn.btn-warning{disabled: @metrics.any?(&:extreme?)} No
     .col-md-2
 
     .col-md-2
