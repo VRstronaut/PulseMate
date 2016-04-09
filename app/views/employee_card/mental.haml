@@ -46,10 +46,32 @@
         %label.left-label{id: "confused"}
     .info-row
       %button.btn.btn-success{type: 'submit'}
-        Confirm
+        That's just how I feel baby!
 
 :javascript
   function updateSliderValue(id, value)
   {
     document.getElementById(id).innerHTML=value + '/10';
   }
+
+%form.jumbotron.question-container
+  %h2 Questionnaire
+  .container.answer-container
+    %table.table.table-striped
+      %tr
+        %th #
+        %th Question
+        %th Never
+        %th Sometimes
+        %th Often
+        %th Almost Always
+      - @questions.each.with_index(1) do |q, i|
+        %tr
+          %td= i
+          %td= q
+          - ['Never', 'Sometimes', 'Often', 'Almost Always'].each_with_index do |a, subidx|
+            %td
+              %input{name: "#{i}", value: subidx, type: 'radio'}
+  .info-row
+    %button.btn.btn-success{type: 'submit'}
+      That's my questionnaire for today!
