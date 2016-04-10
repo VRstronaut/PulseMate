@@ -40,6 +40,10 @@ class EmployeeCardController < ApplicationController
   def aod
   end
 
+  def devices
+
+  end
+
   ## POSTS
 
   def save_wellness

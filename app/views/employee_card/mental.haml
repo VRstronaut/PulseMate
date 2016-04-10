@@ -24,9 +24,10 @@
   //.modal-dialog
 //.modal
 
-.alert.alert-danger{:role => "alert", id: 'mental-alert'}
-  %span.glyphicon.glyphicon-exclamation-sign{"aria-hidden" => "true"}
-  %span Your vital statistics suggest something might be different for you recently. Please fill in the questionnaire below
+.jumbotron
+  .container
+    %h2 Notes for today
+    %p Your vital statistics suggest something might be different for you recently. <b>Please fill in the questionnaire below</b>
 
 .jumbotron.question-container{id: 'questionnaire'}
   = form_tag({}, remote: true) do
