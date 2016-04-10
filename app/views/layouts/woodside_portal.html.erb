@@ -1,0 +1,20 @@
+<% content_for :content do %>
+  <div class="container">
+    <!-- The justified navigation menu is meant for single line per list item.
+         Multiple lines will require custom code not provided by Bootstrap. -->
+    <div class="masthead" style="text-align: center;">
+      <h3 class="text-muted">PulseMate Dashboard - Woodside</h3>
+      <nav>
+        <ul class="nav nav-justified" style="margin: auto; max-width: 800px;">
+          <li class="active"><%= link_to('Dashboard', woodside_portal_index_path) %></li>
+          <li style=""><a href="#">Devices</a></li>
+          <li style=""><a href="#">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pane ">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/application' %>

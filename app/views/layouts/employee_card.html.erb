@@ -1,0 +1,25 @@
+<% content_for :content do %>
+  <div class="container">
+
+    <!-- The justified navigation menu is meant for single line per list item.
+         Multiple lines will require custom code not provided by Bootstrap. -->
+    <div class="masthead">
+      <h3 class="text-muted">PulseMate</h3>
+      <nav>
+        <ul class="nav nav-justified">
+          <li class="<%= active_page?('overview') ? 'active' : '' %>"><%= link_to('Overview', employee_card_overview_path) %></li>
+          <li class="<%= active_page?('musco') ? 'active' : '' %>"><%= link_to('Fitness <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"</span>'.html_safe, employee_card_musco_path) %></li>
+          <li class="<%= active_page?('fatigue') ? 'active' : '' %>"><%= link_to('Fatigue <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"</span>'.html_safe, employee_card_fatigue_path) %></li>
+          <li class="<%= active_page?('hydration') ? 'active' : '' %>"><%= link_to('Hydration', employee_card_hydration_path) %></li>
+          <li class="<%= active_page?('mental') ? 'active' : '' %>"><%= link_to('Wellness <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"</span>'.html_safe, employee_card_mental_path) %></li>
+          <li class="<%= active_page?('aod') ? 'active' : '' %>"><%= link_to('AOD <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"</span>'.html_safe, employee_card_aod_path) %></li>
+          <li class="<%= active_page?('devices') ? 'active' : '' %>"><%= link_to('Devices', employee_card_devices_path) %></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pane ">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/application' %>

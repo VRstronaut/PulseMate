@@ -1,0 +1,66 @@
+.filters
+  .row
+    %form.form
+      .form-group
+        %label Location
+        %select
+          %option{value: "Location"} Wheatstone
+      .form-group
+        %label Employee Role
+        %select
+          %option{value: ''} Drivers
+  .row
+    Showing results for: <b>Wheatstone Drivers</b>
+.container.woodside-portal
+  .info-row
+    .col-md-3
+      <b>Fatigue Risk</b>
+    .col-md-3
+      Single Night: #{render partial: 'mini_chart', locals: { n: [65, 9, 7, 14] }}
+    .col-md-3
+      Multi Night: #{render partial: 'mini_chart', locals: { n: [53, 23, 10, 14] }}
+    .col-md-3
+      Sleep Quality: #{render partial: 'mini_chart', locals: { n: [70, 11, 5, 14] }}
+  .info-row
+    .col-md-3
+      <b>Hydration Risk</b>
+    .col-md-9
+      #{render partial: 'mini_chart', locals: { n: [65, 13, 7, 15] }}
+  .info-row
+    .col-md-3
+      <b>Fitness Risk</b>
+    .col-md-9
+      #{render partial: 'mini_chart', locals: { n: [23, 41, 22, 14] }}
+  .info-row
+    .col-md-3
+      <b>AOD</b>
+    .col-md-3
+      Fail: <b><span style="color: red; text-decoration: underline;">3</span></span></b>
+    .col-md-6
+      Photo Mismatch: <b><span style="color: red; text-decoration: underline;">1</span></span></b>
+  .info-row
+    .col-md-3
+      <b>Wellness</b>
+    .col-md-3
+      Human triggers: <b><span style="color: red; text-decoration: underline;">3</span></b>
+    .col-md-3
+      System triggers: <b><span style="color: red; text-decoration: underline;">5</span></b>
+    .col-md-3
+      Self-assessment triggers: <b><span style="color: red; text-decoration: underline;">0</span></b>
+    .col-md-9.col-md-offset-3
+      .progress
+        .progress-bar.progress-bar-success{:role => "progressbar", :style => "width: 12.5%;"}
+          None (1)
+        .progress-bar.progress-bar-mild{:role => "progressbar", :style => "width: 25%;"}
+          Mild (2)
+        .progress-bar.progress-bar-warning{:role => "progressbar", :style => "width: 37.5%;"}
+          Moderate (3)
+        .progress-bar.progress-bar-danger{:role => "progressbar", :style => "width: 12.5%;"}
+          Severe (1)
+        .progress-bar.progress-bar-black{:role => "progressbar", :style => "width: 12.5%;"}
+          Extremely Severe (1)
+  .info-row
+    .col-md-3
+      <b>Total Staff</b>
+    .col-md-3
+      <b>100</b>

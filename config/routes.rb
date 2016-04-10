@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'woodside_portal/index'
+
   get 'employee_card/overview'
   get 'employee_card/musco'
   get 'employee_card/fatigue'
