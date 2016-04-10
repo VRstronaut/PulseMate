@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   post 'employee_card/mental', to: 'employee_card#save_wellness'
 
-  root to: 'employee_card#overview'
+  root to: 'application#index'
 end
